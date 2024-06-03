@@ -32,7 +32,7 @@ export const ReactPWAInstallProvider = ({ children, enableLogging }: { children:
     }
 
     function isInstalled() {
-        if (window.matchMedia("(display-mode: standalone)").matches) {
+        if (window.matchMedia("(display-mode: standalone)").matches || window.matchMedia("(display-mode: fullscreen)").matches) {
             logger("isInstalled: true. Already in standalone mode");
             return true;
         }
